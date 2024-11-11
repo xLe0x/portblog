@@ -124,7 +124,7 @@ gobuster dir -u http://10.10.98.215:5000/ -w /usr/share/wordlists/seclists/Disco
 
 Visiting `/api`:
 
-![](/public/images/tryhackme/bookstore/api-docs.png)
+![](public/images/tryhackme/bookstore/api-docs.png)
 
 Since There's `v2` of the api and the comment above said the previous version has a paramater that has an LFI vulnerability, Let's Fuzz the parameters on `v1`?
 
@@ -141,7 +141,7 @@ show                    [Status: 500, Size: 23076, Words: 3277, Lines: 357, Dura
 
 Testing all parameters we found that `show` parameter is vulnerable!
 
-![](/public/images/tryhackme/bookstore/etc-passwd-lfi.png)
+![](public/images/tryhackme/bookstore/etc-passwd-lfi.png)
 
 Hmm, where do we go? Remember this?
 
@@ -177,7 +177,7 @@ exit
 
 This PIN will be useful on the console debug web page. Let's visit it:
 
-![](/public/images/tryhackme/bookstore/console.png)
+![](public/images/tryhackme/bookstore/console.png)
 
 Putting the PIN opened us the way to do some RCE with python! So let's get a Python Rev Shell?
 
