@@ -1,5 +1,5 @@
 ---
-heroImage: /src/assets/images/1.png
+heroImage: public/images/bookstore-thm-banner.png
 category: Try Hack Me
 description: 'Bookstore: a Tryhackme Medium Room'
 pubDate: 2024-11-10T22:00:00.000Z
@@ -122,7 +122,7 @@ gobuster dir -u http://10.10.98.215:5000/ -w /usr/share/wordlists/seclists/Disco
 /robots.txt           (Status: 200) [Size: 45]
 ```
 
-Visiting `/api`:![](/src/assets/images/bookstore-tryhackme/api-docs.png)
+Visiting `/api`:![](/images/bookstore-tryhackme/api-docs.png)
 
 Since There's `v2` of the api and the comment above said the previous version has a paramater that has an LFI vulnerability, Let's Fuzz the parameters on `v1`?
 
@@ -137,7 +137,7 @@ published               [Status: 200, Size: 3, Words: 1, Lines: 2, Duration: 745
 show                    [Status: 500, Size: 23076, Words: 3277, Lines: 357, Duration: 834ms]
 ```
 
-Testing all parameters we found that `show` parameter is vulnerable!![](/src/assets/images/bookstore-tryhackme/etc-passwd-lfi.png)
+Testing all parameters we found that `show` parameter is vulnerable!![](/images/bookstore-tryhackme/etc-passwd-lfi.png)
 
 Hmm, where do we go? Remember this?
 
@@ -171,7 +171,7 @@ ls
 exit
 ```
 
-This PIN will be useful on the console debug web page. Let's visit it:![](/src/assets/images/bookstore-tryhackme/console.png)
+This PIN will be useful on the console debug web page. Let's visit it:![](/images/bookstore-tryhackme/console.png)
 
 Putting the PIN opened us the way to do some RCE with python! So let's get a Python Rev Shell?
 
