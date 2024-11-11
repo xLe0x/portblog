@@ -1,0 +1,15 @@
+{
+	"version": 2,
+	"builds": [
+		{
+			"src": "astro.config.mjs",
+			"use": "@astro/build"
+		}
+	],
+	"routes": [
+		{
+			"src": "/src/assets/images/(.*)",
+			"dest": "/src/assets/images/$1"
+		}
+	]
+}
